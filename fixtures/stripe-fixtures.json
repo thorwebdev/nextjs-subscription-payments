@@ -1,0 +1,75 @@
+{
+    "_meta": {
+        "template_version": 0
+    },
+    "fixtures": [
+        {
+            "name": "prod_hobby",
+            "path": "/v1/products",
+            "method": "post",
+            "params": {
+                "name": "Hobby",
+                "description": "Hobby product description",
+                "metadata": {
+                    "id": "prod_hobby"
+                }
+            }
+        },
+        {
+            "name": "prod_freelancer",
+            "path": "/v1/products",
+            "method": "post",
+            "params": {
+                "name": "Freelancer",
+                "description": "Freelancer product description",
+                "metadata": {
+                    "id": "prod_freelancer"
+                }
+            }
+        },
+        {
+            "name": "plan_hobby",
+            "path": "/v1/plans",
+            "method": "post",
+            "params": {
+                "currency": "usd",
+                "interval": "month",
+                "amount": 1000,
+                "product": "${prod_hobby:id}"
+            }
+        },
+        {
+            "name": "plan_hobby",
+            "path": "/v1/plans",
+            "method": "post",
+            "params": {
+                "currency": "usd",
+                "interval": "year",
+                "amount": 10000,
+                "product": "${prod_hobby:id}"
+            }
+        },
+        {
+            "name": "plan_freelancer",
+            "path": "/v1/plans",
+            "method": "post",
+            "params": {
+                "currency": "usd",
+                "interval": "month",
+                "amount": 2000,
+                "product": "${prod_freelancer:id}"
+            }
+        },
+        {
+            "name": "plan_freelancer",
+            "path": "/v1/plans",
+            "method": "post",
+            "params": {
+                "currency": "usd",
+                "interval": "year",
+                "amount": 20000,
+                "product": "${prod_freelancer:id}"
+            }
+        }
+    ]
+}

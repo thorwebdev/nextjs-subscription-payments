@@ -54,15 +54,21 @@ For example, you can create business models with different pricing tiers, e.g.:
   - Price 1: 20 USD per month
   - Price 2: 200 USD per year
 
+#### Doing this automatically with fixtures
+
+The Stripe cli `fixtures` command lets you run a json file as a series of API requests. We have provided you with a [fixtures file](fixtures/stripe-fixtures.json) that you can use to automatically bootstrap some products and prices in your Stripe account. This can be run with `stripe fixtures fixtures/stripe-fixtures.json`.
+
+**Important:** Be sure to start the webhook forwarding (see below) so that the products created by the fixtures command above are imported into your database.
+
 ### Configure the Stripe customer portal
 
 1. Set your custom branding in the [settings](https://dashboard.stripe.com/settings/branding).
-1. Configure the Customer Portal [settings](https://dashboard.stripe.com/test/settings/billing/portal).
-1. Toggle on "Allow customers to update their payment methods".
-1. Toggle on "Allow customers to update subscriptions".
-1. Toggle on "Allow customers to cancel subscriptions".
-1. Add the products and prices that you want to allow customer to switch between.
-1. Set up the required business information and links.
+2. Configure the Customer Portal [settings](https://dashboard.stripe.com/test/settings/billing/portal).
+3. Toggle on "Allow customers to update their payment methods".
+4. Toggle on "Allow customers to update subscriptions".
+5. Toggle on "Allow customers to cancel subscriptions".
+6. Add the products and prices that you want to allow customer to switch between.
+7. Set up the required business information and links.
 
 ### That's it
 
